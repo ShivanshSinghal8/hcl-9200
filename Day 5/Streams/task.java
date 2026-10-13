@@ -14,5 +14,6 @@ public class task {
         list.stream().map(
                 n -> "Mr.".concat(n)).forEach(System.out::println);
         list.stream().sorted().forEach(System.out::println);
+        System.out.println(list.stream().reduce((a,b) -> a+b));
     }
 }
