@@ -24,4 +24,6 @@ public abstract class LibraryItem implements Borrowable{
     }
 
     public abstract double lateFeee(int dayslate);
+
+    public abstract void giveFeedback(String feedback);
 }

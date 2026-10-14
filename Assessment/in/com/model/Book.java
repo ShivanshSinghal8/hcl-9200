@@ -2,7 +2,7 @@ package in.com.model;
 
 import java.util.Date;
 
-public class Book extends LibraryItem{
+public class Book extends in.com.model.LibraryItem {
     private String author;
     private String isbn;
     private boolean available;
@@ -31,6 +31,6 @@ public class Book extends LibraryItem{
 
     @Override
     public void giveFeedback(String feedback) {
-        feedBacks.add(feedBack);
+        //feedBacks.add(feedBack);
     }
 }
