@@ -12,6 +12,6 @@ public interface EmployeeRepo {
     List<Employee> getEmp();
     Employee getEmpById(long emp_id);
     String deleteEmpById(long emp_id);
-    String updateEmpById(long emp_id, String name);
+    String updateEmpById(long emp_id, Employee updatedEmp);
 
 }

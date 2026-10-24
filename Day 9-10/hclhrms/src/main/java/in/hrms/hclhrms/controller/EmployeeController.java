@@ -4,8 +4,7 @@ import in.hrms.hclhrms.entity.Employee;
 import in.hrms.hclhrms.repository.EmployeeRepo;
 import in.hrms.hclhrms.service.EmployeeServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ public class EmployeeController {
                 "Welcome to Hclhrms";
     }
 
-    @GetMapping("/addemp")
+    @PostMapping("/addemp")
     public String addEmp() {
         Employee emp = new Employee(101l, "Shivansh", "Student", "JAVA", "Shiv@gmail.com");
         return employeeService.addEmp(emp);
@@ -42,17 +41,17 @@ public class EmployeeController {
         return emp.toString();
     }
 
-    @GetMapping("/deleteempbyid")
+    @DeleteMapping("/deleteempbyid")
     public String deleteEmpById() {
         return employeeService.deleteEmpById(101l);
     }
 
-    @GetMapping("/updateempbyid")
+    @PatchMapping("/updateempbyid")
     public String updateEmpById() {
-        return employeeService.updateEmpById(101l, "Rohan");
+        return employeeService.updateEmpById(101l, new Employee(102l, "Vishal", "Student", "JAVA", "Shiv@gmail.com"));
     }
 
-    @GetMapping("/addempbulk")
+    @PostMapping("/addempbulk")
     public String addEmpBulk() {
         List<Employee> employees  = new ArrayList<>();
         employees.add(new Employee(101l, "Shivansh", "Student", "JAVA", "Shiv@gmail.com"));

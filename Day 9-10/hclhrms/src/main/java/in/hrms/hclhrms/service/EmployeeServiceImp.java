@@ -28,8 +28,8 @@ public class EmployeeServiceImp {
         return employeeRepo.deleteEmpById(emp_id);
     }
 
-    public String updateEmpById(long emp_id, String name) {
-        return employeeRepo.updateEmpById(emp_id, name);
+    public String updateEmpById(long emp_id, Employee updatedEmp) {
+        return employeeRepo.updateEmpById(emp_id, updatedEmp);
     }
 
     public String addEmpBulk(List<Employee> employees) {

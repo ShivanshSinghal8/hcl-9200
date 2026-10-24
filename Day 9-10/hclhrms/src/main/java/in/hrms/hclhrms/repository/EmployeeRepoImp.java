@@ -42,15 +42,16 @@ public class EmployeeRepoImp implements EmployeeRepo {
     }
 
     @Override
-    public String updateEmpById(long emp_id, String name){
-        Employee emp = employees.stream().filter(e -> e.getEmp_id() == emp_id).findFirst().orElse(null);
-        if (emp == null){
-            return "Employee not found";
+    public String updateEmpById(long emp_id, Employee updatedEmp){
+        Employee existingEmp = getEmpById(emp_id);
+        if (existingEmp == null) {
+            return "Employee not found!";
         }
-        employees.remove(emp);
-        emp.setEmp_name(name);
-        employees.add(emp);
-        return "Employee updated successfully";
-
+        existingEmp.setEmp_name(updatedEmp.getEmp_name());
+        existingEmp.setEmp_id(updatedEmp.getEmp_id());
+        existingEmp.setDesignation(updatedEmp.getDesignation());
+        existingEmp.setEmail(updatedEmp.getEmail());
+        existingEmp.setProgStack(updatedEmp.getProgStack());
+        return "Employee updated successfully!";
     }
 }
