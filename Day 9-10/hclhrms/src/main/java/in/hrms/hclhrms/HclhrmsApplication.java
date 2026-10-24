@@ -10,9 +10,5 @@ public class HclhrmsApplication {
     public static void main(String[] args) {
         SpringApplication.run(HclhrmsApplication.class, args);
         System.out.println("HEllO...");
-
-
-
     }
-
 }

@@ -34,13 +34,11 @@ public class EmployeeRepoImp implements EmployeeRepo {
 
     @Override
     public String deleteEmpById(long emp_id) {
-        for  (Employee employee : employees) {
-            if (employee.getEmp_id() == emp_id) {
-                employees.remove(employee);
-                return "Employee deleted successfully";
-            }
+        boolean found= employees.removeIf(e -> e.getEmp_id() == emp_id);
+        if (found) {
+            return "Employee deleted successfully!";
         }
-        return "Employee not found";
+        return "Employee not found!";
     }
 
     @Override
